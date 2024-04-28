@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Maps</title>
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+</head>
+
+<body>
+    <img id="earth"
+        src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHo4Z29zODd2NXp1ZHlxcTB3N2lubTZmZDhsdW92ZTRuZXJvNWF3YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7WIB00yXujVt4WEo/giphy.gif"
+        alt="">
+        <form id="sign_in_form" action="" method="post">
+            <div class="form-header">
+                <h2>Sign In</h2>
+                <p>please enter your login and password!</p>
+            </div>
+            <div class="form-body">
+                <input type="text" name="email" id="email" placeholder="EMAIL">
+                <input type="password" name="password" id="password" placeholder="PASSWORD">
+            </div>
+    
+        </form>
+</body>
+
+</html>
