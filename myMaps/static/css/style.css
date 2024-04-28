@@ -1,0 +1,77 @@
+body {
+    overflow: hidden;
+    background-color: black;
+    background-size: 30%;
+}
+
+#earth {
+    position: absolute;
+    bottom: -200px;
+    right: 0px;
+    height: 100%;
+    scale: 1.1;
+    z-index: 0;
+}
+
+#sign_in_form {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    /* background-color: gainsboro; */
+    width: 400px;
+    height: 500px;
+    border-radius: 50px;
+    /* box-shadow: 0 0 20px 5px white; */
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+
+.form-header {
+    color: white;
+    text-shadow: 0 0 30px white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.form-body {
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.form-body input {
+    padding-left: 15px;
+    color: white;
+    font-size: 1.2em;
+    width: 300px;
+    height: 40px;
+    background-color: black;
+    border-radius: 15px;
+    box-shadow: 0 0 15px white;
+    text-shadow: 0 0 15px white;
+    border: none;
+}
+
+.form-body input:hover{
+    border: none;
+    box-shadow: 0 0 25px white;
+}
+
+.form-body input:focus{
+    border: none;
+    outline: none;
+    box-shadow: 0 0 30px 3px white;
+}
+
+.form-body input::placeholder {
+    color: white;
+}
+
+/* background-color: #fff;
+box-shadow: 20px 80px 10px 10px #0ff; */
