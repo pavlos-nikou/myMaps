@@ -19,7 +19,7 @@ body {
     left: 200px;
     /* background-color: gainsboro; */
     width: 400px;
-    height: 500px;
+    height: 700px;
     border-radius: 50px;
     /* box-shadow: 0 0 20px 5px white; */
     display: flex;
@@ -38,12 +38,13 @@ body {
 }
 
 .form-body {
+    margin-left: 45px;
     font-size: 1em;
     height: 35%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: start;
 }
 
 .form-body input {
@@ -57,14 +58,15 @@ body {
     box-shadow: 0 0 15px white;
     text-shadow: 0 0 15px white;
     border: none;
+    transition: 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-.form-body input:hover{
+.form-body input:hover {
     border: none;
     box-shadow: 0 0 25px white;
 }
 
-.form-body input:focus{
+.form-body input:focus {
     border: none;
     outline: none;
     box-shadow: 0 0 30px 3px white;
@@ -74,5 +76,22 @@ body {
     color: white;
 }
 
-/* background-color: #fff;
-box-shadow: 20px 80px 10px 10px #0ff; */
+.form-body button {
+    color: white;
+    font-size: 1.2em;
+    padding: 15px;
+    background-color: transparent;
+    border-radius: 15px;
+    border: none;
+    transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.form-body button:hover {
+    color: white;
+    font-size: 1.2em;
+    padding: 15px;
+    background-color: black;
+    box-shadow: 0 0 15px white;
+    text-shadow: 0 0 15px white;
+    border: none;
+}
