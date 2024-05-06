@@ -38,7 +38,8 @@ body {
 }
 
 .form-body {
-    height: 45%;
+    font-size: 1em;
+    height: 35%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -48,9 +49,9 @@ body {
 .form-body input {
     padding-left: 15px;
     color: white;
-    font-size: 1.2em;
+    font-size: 1em;
     width: 300px;
-    height: 40px;
+    height: 30px;
     background-color: black;
     border-radius: 15px;
     box-shadow: 0 0 15px white;
