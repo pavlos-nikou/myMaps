@@ -4,13 +4,17 @@ from django.db import models
 
 # Create your models here.
 class User(models.Model):
-    username = models.CharField(max_length=20)
-    email = models.EmailField()
+    username = models.CharField(max_length=20, unique=True)
+    email = models.EmailField(unique=True)
     password = models.CharField(max_length=20)
-    def _str_(self):
-        return self.name
     
 class Path(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.CharField(max_length=20)
     startPoint = models.JSONField()
     endPoint = models.JSONField()
+    def to_dict(self):
+        return {
+            'user_id': self.user_id,
+            'startPoint': self.startPoint,
+            'endPoint': self.endPoint,
+        }

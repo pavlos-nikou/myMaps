@@ -67,8 +67,11 @@ body {
 }
 
 .form-body input:focus {
+    color: white;
+    text-shadow: 0 0 15px white;
     border: none;
     outline: none;
+    background-color: black;
     box-shadow: 0 0 30px 3px white;
 }
 
@@ -94,4 +97,26 @@ body {
     box-shadow: 0 0 15px white;
     text-shadow: 0 0 15px white;
     border: none;
+}
+
+.valid-feedback {
+    margin-top: 10px;
+    color: green;
+}
+
+.form-control.is-valid, .was-validated .form-control:valid {
+    color: green;
+    box-shadow: 0 0 30px 2px green;
+}
+.form-control.is-valid, .was-validated .form-control:invalid {
+    color: red;
+    box-shadow: 0 0 30px 2px red;
+}
+.form-control.is-valid, .was-validated .form-control:valid:focus {
+    color: green;
+    box-shadow: 0 0 30px 2px green;
+}
+.form-control.is-valid, .was-validated .form-control:invalid:focus {
+    color: red;
+    box-shadow: 0 0 30px 2px red;
 }

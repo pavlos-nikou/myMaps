@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Maps</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href='{% static "css/style.css" %}'>
 </head>
 
@@ -14,18 +15,50 @@
     <img id="earth"
         src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHo4Z29zODd2NXp1ZHlxcTB3N2lubTZmZDhsdW92ZTRuZXJvNWF3YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7WIB00yXujVt4WEo/giphy.gif"
         alt="">
-        <form id="sign_in_form" action="" method="post">
-            <div class="form-header">
-                <h2>Sign In</h2>
-                <p>please enter your login and password!</p>
+    <form id="sign_in_form" class="needs-validation" action="" method="post" novalidate>
+        <div class="form-header">
+            <h2>Sign In</h2>
+            <p>please enter your login and password!</p>
+        </div>
+        <div class="form-body">
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            <div class="input_container">
+                <input class="form-control" type="text" name="username" id="username" placeholder="USERNAME" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">This field needs to be filled.</div>
             </div>
-            <div class="form-body">
-                <input type="text" name="email" id="email" placeholder="EMAIL">
-                <input type="password" name="password" id="password" placeholder="PASSWORD">
-                <button class="button button--two">Sign In</button>
+            <div class="input_container">
+                <input class="form-control" type="password" name="password" id="password" placeholder="PASSWORD"
+                    required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">This field needs to be filled.</div>
             </div>
-    
-        </form>
+            <button class="button button--two">Sign In</button>
+        </div>
+
+    </form>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
 </body>
 
 </html>
