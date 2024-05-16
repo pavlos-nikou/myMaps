@@ -5,5 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("",views.maps, name="maps"),
-    path("key",views.mapsKey, name="mapsKey")
+    path("key",views.mapsKey, name="mapsKey"),
+    path("directions/<str:modeOfTransport>/<str:startLong>,<str:startLat>;<str:endLong>,<str:endLat>", views.getDirections, name="getDirections"),
+    path("newRoute/<str:startLong>,<str:startLat>;<str:endLong>,<str:endLat>", views.createRoute, name="newRoute")
 ]

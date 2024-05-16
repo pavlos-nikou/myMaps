@@ -1,5 +1,4 @@
 from django.db import models
-# from encrypted_model_fields.fields import EncryptedCharField
 
 
 # Create your models here.
@@ -8,13 +7,15 @@ class User(models.Model):
     email = models.EmailField(unique=True)
     password = models.CharField(max_length=20)
     
-class Path(models.Model):
+class Route(models.Model):
     user_id = models.CharField(max_length=20)
+    routeName = models.CharField(max_length=100)
     startPoint = models.JSONField()
     endPoint = models.JSONField()
     def to_dict(self):
         return {
             'user_id': self.user_id,
+            'routeName': self.routeName,
             'startPoint': self.startPoint,
-            'endPoint': self.endPoint,
+            'endPoint': self.endPoint
         }

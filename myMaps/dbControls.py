@@ -5,7 +5,7 @@ import django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myMaps.settings")
 django.setup()
 
-from users.models import User, Path
+from users.models import User, Route
 
 def query_records():
     records = User.objects.all()
@@ -18,13 +18,17 @@ def delete_all_records():
 # delete_all_records()
 
 def create_path():
-    newPath = Path(user_id="pavlos1",startPoint={"lat":34.658383, "long": 32.961000}, endPoint={"lat":34.874886, "long": 32.736756})
+    newPath = Route(user_id="pavlos1", routeName="Route3", startPoint={"lat":34.686647, "long": 32.005162}, endPoint={"lat":34.875084, "long": 32.736881})
     newPath.save()
 
 def query_records_paths():
-    records = Path.objects.all()
+    records = Route.objects.all()
     for record in records:
-        print(record.user_id, record.startPoint, record.endPoint)
+        print(record.user_id, record.routeName, record.startPoint, record.endPoint)
 
-# create_path()
-# query_records_paths()
+def delete_all_records_paths():
+    Route.objects.all().delete()
+
+create_path()
+# delete_all_records_paths()
+query_records_paths()

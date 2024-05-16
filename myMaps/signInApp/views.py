@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
-from users.models import User, Path
+from users.models import User, Route
 from django.http import JsonResponse
 from mapsApp.views import maps
 # Create your views here.
