@@ -106,3 +106,48 @@ showRouteButtons.forEach(showRouteButton => {
     })
   })
 });
+
+
+//create routes
+
+function addCoordinates(longLat, latInput, longInput) {
+  if (enableClickStart || enableClickEnd) {
+    latInput.value = longLat.lat
+    longInput.value = longLat.lng
+  }
+
+}
+
+const pinButtons = document.querySelectorAll(".location_pin_button")
+console.log(pinButtons);
+let startPinButton = pinButtons[0]
+let endPinButton = pinButtons[1]
+
+let enableClickStart;
+startPinButton.addEventListener("click", () => {
+  enableClickStart = true
+  let latInput = document.querySelector("#start_lat")
+  let longInput = document.querySelector("#start_long")
+  map.on("click", e => {
+    let longLat = e.lngLat
+    if (enableClickStart) {
+      latInput.value = longLat.lat
+      longInput.value = longLat.lng
+    }
+    enableClickStart = false
+  })
+})
+let enableClickEnd;
+endPinButton.addEventListener("click", () => {
+  enableClickEnd = true
+  let latInput = document.querySelector("#end_lat")
+  let longInput = document.querySelector("#end_long")
+  map.on("click", e => {
+    let longLat = e.lngLat
+    if (enableClickEnd) {
+      latInput.value = longLat.lat
+      longInput.value = longLat.lng
+    }
+    enableClickEnd = false
+  })
+})

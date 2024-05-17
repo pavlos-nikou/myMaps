@@ -17,35 +17,36 @@
 
 <body>
 
-    <form class="route_create_form expand_2" action="" method="post">
+    <form class="route_create_form expand_2" action="/maps/newRoute/" method="post">
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
         <div class="start">
             <div class="mb-3 coordinates">
                 <label for="start_lat" class="form-label">Start Latitude</label>
-                <input type="text" class="form-control" id="start_lat" placeholder="24.24235234">
+                <input type="text" class="form-control" id="start_lat" name="start_lat" placeholder="24.24235234" required>
             </div>
             <div class="mb-3 coordinates">
                 <label for="start_long" class="form-label">Start Longitude</label>
-                <input type="email" class="form-control" id="start_long" placeholder="-34.24235234">
+                <input type="text" class="form-control" id="start_long" name="start_long" placeholder="-34.24235234" required>
             </div>
             <div class="location_pin_button"><i class="fa-solid fa-location-dot"></i></div>
         </div>
         <div class="end">
             <div class="mb-3 coordinates">
                 <label for="end_lat" class="form-label">End Latitude</label>
-                <input type="email" class="form-control" id="end_lat" placeholder="24.24235234">
+                <input type="text" class="form-control" id="end_lat" name="end_lat" placeholder="24.24235234" required>
             </div>
             <div class="mb-3 coordinates">
                 <label for="end_long" class="form-label">End Longitude</label>
-                <input type="email" class="form-control" id="end_long" placeholder="-34.24235234">
+                <input type="text" class="form-control" id="end_long" name="end_long" placeholder="-34.24235234" required>
             </div>
             <div class="location_pin_button"><i class="fa-solid fa-location-dot"></i></div>
         </div>
         <div class="form_container">
         <div id="route_name_container" class="mb-3">
             <label for="route_name" class="form-label">Route Name</label>
-            <input type="email" class="form-control" id="route_name" placeholder="Route Name">
+            <input type="text" class="form-control" id="route_name" placeholder="Route Name" required>
         </div>
-        <button type="button" class="btn btn-light">Light</button>
+        <button type="submit" class="btn btn-light">Save Route</button>
         </div>
     </form>
     <div class="routes">

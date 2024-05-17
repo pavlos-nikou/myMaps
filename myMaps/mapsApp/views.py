@@ -25,9 +25,15 @@ def getDirections(request, modeOfTransport, startLong, startLat, endLong, endLat
     response = requests.get(f"https://api.mapbox.com/directions/v5/mapbox/cycling/{startLong},{startLat};{endLong},{endLat}?geometries=geojson&access_token={token}")
     return HttpResponse(response)
 
-def createRoute(request, startLong, startLat, endLong, endLat):
-    print(request.session.get("username"))
-    print(startLong, startLat, endLat, endLong)
-    newRoute = Route(user_id=request.session.get("username"), routeName="Route4", startPoint={"lat":34.686647, "long": 32.005162}, endPoint={"lat":34.875084, "long": 32.736881})
-    newRoute.save()
-    return redirect("maps")
+def createRoute(request):
+    if request.method == "POST":
+        print(request.session.get("username"))
+        startLong = request.POST.get('start_long')
+        startLat = request.POST.get('start_lat')
+        endLong = request.POST.get('end_long')
+        endLat = request.POST.get('end_lat')
+        print(startLat,startLong,endLat,endLong)
+
+        # newRoute = Route(user_id=request.session.get("username"), routeName="Route4", startPoint={"lat":34.686647, "long": 32.005162}, endPoint={"lat":34.875084, "long": 32.736881})
+        # newRoute.save()
+        return redirect("maps")

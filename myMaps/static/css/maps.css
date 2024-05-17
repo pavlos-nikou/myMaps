@@ -117,9 +117,11 @@ label {
     top: 5px;
     font-size: 35px;
     color: #1d3557;
+    transition: 0.2s;
 }
 
 .location_pin_button:hover {
+    color: #f1faee;
     cursor: pointer;
 }
 
@@ -132,19 +134,23 @@ label {
 
 .form_container {
     width: 100%;
-    background-color: black;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 .form_container #route_name_container {
-    background-color: red;
+    display: inline-block;
+    margin-left: 20px;
     width: 300px;
 }
 
-.form_container #button {
-    
+.form_container .btn {
+    color: whitesmoke;
+    display: inline;
+    margin-left: 200px;
+    background-color: #457b9d;
+}
+
+.form_container .btn:hover {
+    background-color: #1d3557;
 }
 
 .expand_2 {
