@@ -16,7 +16,7 @@ body {
 #sign_in_form {
     position: absolute;
     top: 200px;
-    left: 200px;
+    left: 225px;
     /* background-color: gainsboro; */
     width: 400px;
     height: 700px;
@@ -40,11 +40,25 @@ body {
 .form-body {
     margin-left: 45px;
     font-size: 1em;
-    height: 35%;
+    height: 30%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: start;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-body a {
+    color: white;
+    padding: 20px;
+}
+
+.form_body_signUp {
+    height: 40%;
 }
 
 .form-body input {
@@ -100,7 +114,7 @@ body {
 }
 
 .valid-feedback {
-    margin-top: 10px;
+    margin-top: 5px;
     color: green;
 }
 
@@ -108,15 +122,25 @@ body {
     color: green;
     box-shadow: 0 0 30px 2px green;
 }
+
 .form-control.is-valid, .was-validated .form-control:invalid {
     color: red;
     box-shadow: 0 0 30px 2px red;
 }
+
 .form-control.is-valid, .was-validated .form-control:valid:focus {
     color: green;
     box-shadow: 0 0 30px 2px green;
 }
+
 .form-control.is-valid, .was-validated .form-control:invalid:focus {
     color: red;
     box-shadow: 0 0 30px 2px red;
+}
+
+.alert {
+    width: 90%;
+    position: absolute;
+    top: 15px;
+    left: 5%;
 }

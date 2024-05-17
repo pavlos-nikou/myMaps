@@ -84,6 +84,26 @@ routesCloseButton.addEventListener("click", e => {
   routesCloseButton.classList.add("hidden")
 })
 
+//expand create route form
+const createRouteForm = document.querySelector(".route_create_form")
+const createRouteExpandButton = document.querySelector(".expand_create_route_button")
+const createRouteCloseButton = document.querySelector(".close_create_form_button")
+console.log(createRouteCloseButton);
+const formContainer = document.querySelector(".form_container")
+
+createRouteCloseButton.addEventListener("click", () => {
+  createRouteForm.classList.remove("expand_2")
+  createRouteExpandButton.classList.remove("hidden")
+  createRouteExpandButton.classList.remove("hidden")
+  formContainer.classList.add("hidden")
+})
+
+createRouteExpandButton.addEventListener("click", () => {
+  createRouteForm.classList.add("expand_2")
+  createRouteExpandButton.classList.add("hidden")
+  createRouteExpandButton.classList.add("hidden")
+  formContainer.classList.remove("hidden")
+})
 
 // show routes when pressed
 const showRouteButtons = document.querySelectorAll(".route")
@@ -109,21 +129,13 @@ showRouteButtons.forEach(showRouteButton => {
 
 
 //create routes
-
-function addCoordinates(longLat, latInput, longInput) {
-  if (enableClickStart || enableClickEnd) {
-    latInput.value = longLat.lat
-    longInput.value = longLat.lng
-  }
-
-}
-
 const pinButtons = document.querySelectorAll(".location_pin_button")
 console.log(pinButtons);
 let startPinButton = pinButtons[0]
 let endPinButton = pinButtons[1]
 
 let enableClickStart;
+let markerStart;
 startPinButton.addEventListener("click", () => {
   enableClickStart = true
   let latInput = document.querySelector("#start_lat")
@@ -133,11 +145,18 @@ startPinButton.addEventListener("click", () => {
     if (enableClickStart) {
       latInput.value = longLat.lat
       longInput.value = longLat.lng
+      if (markerStart) {
+        markerStart.remove()
+      }
+      markerStart = new mapboxgl.Marker()
+        .setLngLat(longLat)
+        .addTo(map);
     }
     enableClickStart = false
   })
 })
 let enableClickEnd;
+let markerEnd;
 endPinButton.addEventListener("click", () => {
   enableClickEnd = true
   let latInput = document.querySelector("#end_lat")
@@ -147,6 +166,12 @@ endPinButton.addEventListener("click", () => {
     if (enableClickEnd) {
       latInput.value = longLat.lat
       longInput.value = longLat.lng
+      if (markerEnd) {
+        markerEnd.remove()
+      }
+      markerEnd = new mapboxgl.Marker()
+        .setLngLat(longLat)
+        .addTo(map);
     }
     enableClickEnd = false
   })

@@ -14,8 +14,12 @@ def query_records():
 
 def delete_all_records():
     # Delete all records from the model
-    User.objects.all().delete()
+    User.objects.all()[1].delete()
 # delete_all_records()
+
+def delete_user(username):
+    user = User.objects.get(username=username)
+    user.delete()
 
 def create_path():
     newPath = Route(user_id="pavlos1", routeName="Route3", startPoint={"lat":34.686647, "long": 32.005162}, endPoint={"lat":34.875084, "long": 32.736881})
@@ -29,6 +33,11 @@ def query_records_paths():
 def delete_all_records_paths():
     Route.objects.all().delete()
 
-create_path()
+# create_path()
 # delete_all_records_paths()
-query_records_paths()
+# query_records_paths()
+query_records()
+# delete_all_records()
+# delete_user(asdfas)
+# delete_user(asdf)
+# delete_user(asdfadsf)
