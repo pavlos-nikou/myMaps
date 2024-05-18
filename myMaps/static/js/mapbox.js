@@ -16,7 +16,6 @@ drawRoute = (map, coordinates) => {
     map.removeLayer('route');
     map.removeSource('route');
   }
-  // console.log(coordinates);
   map.addLayer({
     id: 'route',
     type: 'line',
